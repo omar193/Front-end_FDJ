@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="card">
+            <div class="card-content">
+                <div class="input-field">
+                    <input 
+                    #searchBox 
+                    (keyup)="search(searchBox.value)" 
+                    placeholder="Rechercher une league"
+                />
+                <div class="collection">
+                    <a 
+                        *ngFor="let league of leagues$ | async"
+                        (click)="goToDetail(league)"
+                        class="collection-item"
+                    >
+                        {{ league.name }}
+                </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

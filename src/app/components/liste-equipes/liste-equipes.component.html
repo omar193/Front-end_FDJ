@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row" >
+        <div *ngFor="let team of teams" class="col m4 s6">
+            <div (click)="goToPlayers(team)" class="card horizontal" TeamBorderCard>
+                <div class="card-image">
+                    <img [src]="team.thumbnail" />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ team.name }}</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="teams.length ===0">
+       <h4>Pas d'équipe dans cette Ligue !!</h4> 
+    </div> 
+</div>
+
